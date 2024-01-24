@@ -10,40 +10,32 @@ import java.util.List;
 import java.util.Objects;
 
 
+@Getter
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
 
-    @Getter
     @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
     @Setter
     private String name;
 
-    @Getter
     @Setter
     private String email;
 
-    @Getter
     @Setter
     private String phone;
 
-    @Getter
     @Setter
     private String password;
 
     @JsonIgnore
     @OneToMany(mappedBy = "client")
     private List<Order> orders = new ArrayList<>();
-
-    public List<Order> getOrders() {
-        return orders;
-    }
 
     public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
