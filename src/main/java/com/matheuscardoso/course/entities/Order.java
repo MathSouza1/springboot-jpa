@@ -41,4 +41,8 @@ public class Order implements Serializable {
             this.orderStatus = orderStatus.getCode();
         }
     }
+
+    public double total(){
+        return 0.0;
+    }
 }
