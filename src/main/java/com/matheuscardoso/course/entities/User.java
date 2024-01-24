@@ -1,7 +1,15 @@
 package com.matheuscardoso.course.entities;
 
+import lombok.*;
 
-public class User {
+import java.io.Serializable;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode
+public class User implements Serializable {
     private Long id;
     private String name;
     private String email;
