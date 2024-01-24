@@ -44,7 +44,7 @@ public class TestConfig implements CommandLineRunner {
         Order thirdOrder = new Order(null, Instant.parse("2019-07-22T15:21:22Z"), OrderStatus.DELIVERED, firstUser);
         orderRepository.saveAll(Arrays.asList(firstOrder, secondOrder, thirdOrder));
 
-        Category firstCategory = new Category(null, "Eletronics");
+        Category firstCategory = new Category(null, "Electronics");
         Category secondCategory = new Category(null, "Books");
         Category thirdCategory = new Category(null, "Computers");
         categoryRepository.saveAll(Arrays.asList(firstCategory, secondCategory, thirdCategory));
@@ -54,6 +54,13 @@ public class TestConfig implements CommandLineRunner {
         Product thirdProduct = new Product(null, "Macbook Pro", "Nam eleifend maximus tortor, at mollis.", 1250.0, "");
         Product fourthProduct = new Product(null, "PC Gamer", "Donec aliquet odio ac rhoncus cursus.", 1200.0, "");
         Product fifithProduct = new Product(null, "Rails for Dummies", "Cras fringilla convallis sem vel faucibus.", 100.99, "");
-        productRepository.saveAll(Arrays.asList(fifithProduct, secondProduct, thirdProduct, fourthProduct, fifithProduct));
+
+        firstProduct.getCategories().add(secondCategory);
+        secondProduct.getCategories().add(firstCategory);
+        secondProduct.getCategories().add(thirdCategory);
+        thirdProduct.getCategories().add(thirdCategory);
+        fourthProduct.getCategories().add(thirdCategory);
+        fifithProduct.getCategories().add(secondCategory);
+        productRepository.saveAll(Arrays.asList(firstProduct, secondProduct, thirdProduct, fourthProduct, fifithProduct));
     }
 }
