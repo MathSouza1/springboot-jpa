@@ -7,19 +7,23 @@ import jakarta.persistence.Table;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.Objects;
 
-@Getter
-@Setter
+
 @NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode
 @Entity
 @Table(name = "tb_order_item")
 public class OrderItem implements Serializable {
 
     @EmbeddedId
     private OrderItemPK id = new OrderItemPK();
+
+    @Getter
+    @Setter
     private Integer quantity;
+
+    @Getter
+    @Setter
     private Double price;
 
     public OrderItem(Order order, Product product, Integer quantity, Double price) {
@@ -43,5 +47,18 @@ public class OrderItem implements Serializable {
 
     public void setProduct(Product product) {
         id.setProduct(product);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof OrderItem orderItem)) return false;
+
+        return Objects.equals(id, orderItem.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return id != null ? id.hashCode() : 0;
     }
 }
