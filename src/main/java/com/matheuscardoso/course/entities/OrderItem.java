@@ -1,26 +1,28 @@
 package com.matheuscardoso.course.entities;
 
 import com.matheuscardoso.course.entities.primarykey.OrderItemPK;
-import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import lombok.*;
 
 import java.io.Serializable;
 
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode
 @Entity
 @Table(name = "tb_order_item")
-public class OrderITem implements Serializable {
+public class OrderItem implements Serializable {
 
     @EmbeddedId
-    private OrderItemPK id;
+    private OrderItemPK id = new OrderItemPK();
     private Integer quantity;
     private Double price;
 
-    public OrderITem(Order order, Product product, Integer quantity, Double price) {
+    public OrderItem(Order order, Product product, Integer quantity, Double price) {
         id.setOrder(order);
         id.setProduct(product);
         this.quantity = quantity;

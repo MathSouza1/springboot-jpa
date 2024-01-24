@@ -16,17 +16,17 @@ import java.util.List;
 public class ProductController {
 
     @Autowired
-    private ProductService service;
+    private ProductService productService;
 
     @GetMapping
     public ResponseEntity<List<Product>> findAll() {
-        List<Product> list = service.findAll();
+        List<Product> list = productService.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Product> findById(@PathVariable Long id) {
-        Product obj = service.findById(id);
+        Product obj = productService.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 }

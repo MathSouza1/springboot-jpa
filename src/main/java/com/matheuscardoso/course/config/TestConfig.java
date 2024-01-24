@@ -1,14 +1,8 @@
 package com.matheuscardoso.course.config;
 
-import com.matheuscardoso.course.entities.Category;
-import com.matheuscardoso.course.entities.Order;
-import com.matheuscardoso.course.entities.Product;
-import com.matheuscardoso.course.entities.User;
+import com.matheuscardoso.course.entities.*;
 import com.matheuscardoso.course.enumerators.OrderStatus;
-import com.matheuscardoso.course.repositories.CategoryRepository;
-import com.matheuscardoso.course.repositories.OrderRepository;
-import com.matheuscardoso.course.repositories.ProductRepository;
-import com.matheuscardoso.course.repositories.UserRepository;
+import com.matheuscardoso.course.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
@@ -32,6 +26,9 @@ public class TestConfig implements CommandLineRunner {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private OrderItemRepository orderItemRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -62,5 +59,11 @@ public class TestConfig implements CommandLineRunner {
         fourthProduct.getCategories().add(thirdCategory);
         fifithProduct.getCategories().add(secondCategory);
         productRepository.saveAll(Arrays.asList(firstProduct, secondProduct, thirdProduct, fourthProduct, fifithProduct));
+
+        OrderItem firstOrderItem = new OrderItem(firstOrder, firstProduct, 2, firstProduct.getPrice());
+        OrderItem secondOrderItem = new OrderItem(firstOrder, thirdProduct, 1, thirdProduct.getPrice());
+        OrderItem thirdOrderItem = new OrderItem(secondOrder, thirdProduct, 2, thirdProduct.getPrice());
+        OrderItem fourthOrderItem = new OrderItem(thirdOrder, fifithProduct, 2, fifithProduct.getPrice());
+        orderItemRepository.saveAll(Arrays.asList(firstOrderItem, secondOrderItem, thirdOrderItem, fourthOrderItem));
     }
 }
