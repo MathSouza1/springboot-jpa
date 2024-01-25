@@ -1,6 +1,7 @@
 package com.matheuscardoso.course.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.matheuscardoso.course.domain.dto.UserDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -45,6 +46,13 @@ public class User implements Serializable {
         this.email = email;
         this.phone = phone;
         this.password = password;
+    }
+
+    public User(UserDTO userDTO) {
+        this.name = userDTO.name();
+        this.email = userDTO.email();
+        this.phone = userDTO.phone();
+        this.password = userDTO.password();
     }
 
     @Override
