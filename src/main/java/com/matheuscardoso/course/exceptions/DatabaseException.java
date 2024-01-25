@@ -1,4 +1,4 @@
-package com.matheuscardoso.course.services.exceptions;
+package com.matheuscardoso.course.exceptions;
 
 public class DatabaseException extends RuntimeException {
     public DatabaseException(String message) {

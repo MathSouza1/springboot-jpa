@@ -1,4 +1,4 @@
-package com.matheuscardoso.course.services.exceptions;
+package com.matheuscardoso.course.exceptions;
 
 public class UserNotFoundException extends RuntimeException{
     public UserNotFoundException(Object object) {

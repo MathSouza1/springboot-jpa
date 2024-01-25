@@ -1,4 +1,4 @@
-package com.matheuscardoso.course.controllers.exceptions;
+package com.matheuscardoso.course.exceptions;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;

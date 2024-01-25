@@ -1,7 +1,5 @@
-package com.matheuscardoso.course.controllers.exceptions;
+package com.matheuscardoso.course.exceptions;
 
-import com.matheuscardoso.course.services.exceptions.DatabaseException;
-import com.matheuscardoso.course.services.exceptions.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
