@@ -55,8 +55,12 @@ public class Order implements Serializable {
         }
     }
 
-    public double total(){
-        return 0.0;
+    public Double getTotal() {
+        double totalOrderPrice = 0.0;
+        for (OrderItem orderItem : items) {
+            totalOrderPrice += orderItem.getSubTotal();
+        }
+        return totalOrderPrice;
     }
 
     @Override
