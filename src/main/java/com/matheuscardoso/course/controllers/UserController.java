@@ -4,6 +4,7 @@ import com.matheuscardoso.course.domain.dto.UserDTO;
 import com.matheuscardoso.course.entities.User;
 import com.matheuscardoso.course.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -33,10 +34,13 @@ public class UserController {
     @PostMapping
     public ResponseEntity<User> saveUser(@RequestBody UserDTO userDTO){
         User user = userService.save(userDTO);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
-                .path("/{id}")
-                .buildAndExpand(user.getId())
-                .toUri();
-        return ResponseEntity.created(uri).body(user);
+        return new ResponseEntity<>(user, HttpStatus.CREATED);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteUser(@PathVariable Long id) {
+        userService.delete(id);
+        String responseMessge = "User deleted successfully!";
+        return new ResponseEntity<>(responseMessge, HttpStatus.OK);
     }
 }

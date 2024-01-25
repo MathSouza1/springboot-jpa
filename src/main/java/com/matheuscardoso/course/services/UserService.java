@@ -29,4 +29,8 @@ public class UserService {
         User user = new User(userDTO);
         return userRepository.save(user);
     }
+
+    public void delete(Long id) {
+        userRepository.deleteById(id);
+    }
 }

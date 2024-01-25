@@ -1,4 +1,4 @@
-package com.matheuscardoso.course.domain;
+package com.matheuscardoso.course.domain.instances;
 
 import com.matheuscardoso.course.entities.*;
 import com.matheuscardoso.course.enumerators.OrderStatus;
