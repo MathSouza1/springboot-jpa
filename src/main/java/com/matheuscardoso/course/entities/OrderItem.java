@@ -5,6 +5,7 @@ import com.matheuscardoso.course.entities.primarykey.OrderItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +15,7 @@ import java.util.Objects;
 
 
 @NoArgsConstructor
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tb_order_item")
 public class OrderItem implements Serializable {
@@ -55,18 +57,5 @@ public class OrderItem implements Serializable {
 
     public Double getSubTotal() {
         return price * quantity;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof OrderItem orderItem)) return false;
-
-        return Objects.equals(id, orderItem.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
     }
 }

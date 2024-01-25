@@ -3,6 +3,7 @@ package com.matheuscardoso.course.entities;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.matheuscardoso.course.domain.dto.UserDTO;
 import jakarta.persistence.*;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,6 +16,7 @@ import java.util.Objects;
 
 @Getter
 @NoArgsConstructor
+@EqualsAndHashCode(of = "id")
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
@@ -53,18 +55,5 @@ public class User implements Serializable {
         this.email = userDTO.email();
         this.phone = userDTO.phone();
         this.password = userDTO.password();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User user)) return false;
-
-        return Objects.equals(id, user.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return id != null ? id.hashCode() : 0;
     }
 }
