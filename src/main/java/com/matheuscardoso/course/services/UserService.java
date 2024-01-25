@@ -3,8 +3,8 @@ package com.matheuscardoso.course.services;
 import com.matheuscardoso.course.domain.dto.UserDTO;
 import com.matheuscardoso.course.entities.User;
 import com.matheuscardoso.course.repositories.UserRepository;
+import com.matheuscardoso.course.services.exceptions.UserNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,7 +22,7 @@ public class UserService {
 
     public User findById(Long id) {
         Optional<User> user = userRepository.findById(id);
-        return user.get();
+        return user.orElseThrow(() -> new UserNotFoundException(id));
     }
 
     public User save(UserDTO userDTO) {
