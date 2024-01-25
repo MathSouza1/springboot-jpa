@@ -3,7 +3,6 @@ package com.matheuscardoso.course.entities;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.matheuscardoso.course.enumerators.OrderStatus;
 import jakarta.persistence.*;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,26 +13,23 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
+@Getter
 @NoArgsConstructor
 @Entity
 @Table(name = "tb_order")
 public class Order implements Serializable {
 
-    @Getter
     @Setter
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Getter
     @Setter
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss'Z'", timezone = "GMT")
     private Instant moment;
 
-    @Getter
     private Integer orderStatus;
 
-    @Getter
     @Setter
     @ManyToOne
     @JoinColumn(name = "client_id")

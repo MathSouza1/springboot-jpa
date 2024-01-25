@@ -1,4 +1,4 @@
-package com.matheuscardoso.course.config;
+package com.matheuscardoso.course.domain;
 
 import com.matheuscardoso.course.entities.*;
 import com.matheuscardoso.course.enumerators.OrderStatus;
@@ -13,7 +13,7 @@ import java.util.Arrays;
 
 @Configuration
 @Profile("test")
-public class TestConfig implements CommandLineRunner {
+public class Instance implements CommandLineRunner {
 
     @Autowired
     private UserRepository userRepository;

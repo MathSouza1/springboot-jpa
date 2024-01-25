@@ -1,10 +1,13 @@
 package com.matheuscardoso.course.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.matheuscardoso.course.entities.primarykey.OrderItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -33,6 +36,7 @@ public class OrderItem implements Serializable {
         this.price = price;
     }
 
+    @JsonIgnore
     public Order getOrder() {
         return id.getOrder();
     }
