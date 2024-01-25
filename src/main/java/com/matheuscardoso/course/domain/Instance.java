@@ -65,5 +65,9 @@ public class Instance implements CommandLineRunner {
         OrderItem thirdOrderItem = new OrderItem(secondOrder, thirdProduct, 2, thirdProduct.getPrice());
         OrderItem fourthOrderItem = new OrderItem(thirdOrder, fifithProduct, 2, fifithProduct.getPrice());
         orderItemRepository.saveAll(Arrays.asList(firstOrderItem, secondOrderItem, thirdOrderItem, fourthOrderItem));
+
+        Payment firstPayment = new Payment(null, Instant.parse("2019-06-20T21:53:07Z"), firstOrder);
+        firstOrder.setPayment(firstPayment);
+        orderRepository.save(firstOrder);
     }
 }
