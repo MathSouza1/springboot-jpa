@@ -1,4 +1,4 @@
-package com.matheuscardoso.course.entities;
+package com.matheuscardoso.course.domain.entities;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.matheuscardoso.course.enumerators.OrderStatus;
@@ -11,7 +11,6 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @Getter

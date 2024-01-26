@@ -1,6 +1,6 @@
 package com.matheuscardoso.course.configs;
 
-import com.matheuscardoso.course.entities.*;
+import com.matheuscardoso.course.domain.entities.*;
 import com.matheuscardoso.course.enumerators.OrderStatus;
 import com.matheuscardoso.course.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;

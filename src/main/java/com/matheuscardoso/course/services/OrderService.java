@@ -1,6 +1,6 @@
 package com.matheuscardoso.course.services;
 
-import com.matheuscardoso.course.entities.Order;
+import com.matheuscardoso.course.domain.entities.Order;
 import com.matheuscardoso.course.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

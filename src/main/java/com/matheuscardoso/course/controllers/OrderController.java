@@ -1,6 +1,6 @@
 package com.matheuscardoso.course.controllers;
 
-import com.matheuscardoso.course.entities.Order;
+import com.matheuscardoso.course.domain.entities.Order;
 import com.matheuscardoso.course.services.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

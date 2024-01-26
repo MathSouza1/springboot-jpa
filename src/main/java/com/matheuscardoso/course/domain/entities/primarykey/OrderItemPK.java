@@ -1,7 +1,7 @@
-package com.matheuscardoso.course.entities.primarykey;
+package com.matheuscardoso.course.domain.entities.primarykey;
 
-import com.matheuscardoso.course.entities.Order;
-import com.matheuscardoso.course.entities.Product;
+import com.matheuscardoso.course.domain.entities.Order;
+import com.matheuscardoso.course.domain.entities.Product;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;

@@ -1,6 +1,6 @@
 package com.matheuscardoso.course.controllers;
 
-import com.matheuscardoso.course.entities.Product;
+import com.matheuscardoso.course.domain.entities.Product;
 import com.matheuscardoso.course.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

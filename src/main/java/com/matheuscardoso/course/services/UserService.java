@@ -1,7 +1,7 @@
 package com.matheuscardoso.course.services;
 
 import com.matheuscardoso.course.domain.dto.UserDTO;
-import com.matheuscardoso.course.entities.User;
+import com.matheuscardoso.course.domain.entities.User;
 import com.matheuscardoso.course.repositories.UserRepository;
 import com.matheuscardoso.course.exceptions.DatabaseException;
 import com.matheuscardoso.course.exceptions.UserNotFoundException;

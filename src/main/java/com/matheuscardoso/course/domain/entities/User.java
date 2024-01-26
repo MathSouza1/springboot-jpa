@@ -1,4 +1,4 @@
-package com.matheuscardoso.course.entities;
+package com.matheuscardoso.course.domain.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.matheuscardoso.course.domain.dto.UserDTO;
@@ -11,7 +11,6 @@ import lombok.Setter;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 
 @Getter

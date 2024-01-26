@@ -1,4 +1,4 @@
-package com.matheuscardoso.course.entities;
+package com.matheuscardoso.course.domain.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -6,7 +6,6 @@ import lombok.*;
 
 import java.io.Serializable;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
 @AllArgsConstructor

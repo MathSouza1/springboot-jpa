@@ -1,7 +1,7 @@
-package com.matheuscardoso.course.entities;
+package com.matheuscardoso.course.domain.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.matheuscardoso.course.entities.primarykey.OrderItemPK;
+import com.matheuscardoso.course.domain.entities.primarykey.OrderItemPK;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
@@ -11,7 +11,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 
 @NoArgsConstructor
